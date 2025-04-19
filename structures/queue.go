@@ -32,27 +32,3 @@ func (q *Queue) Dequeue() (interface{}, error) {
 	q.items.DeleteValue(result)
 	return result, nil
 }
-
-func start() {
-	queue := &Queue{}
-
-	// Добавляем элементы
-	queue.Enqueue(10)
-	queue.Enqueue(20)
-	queue.Enqueue(30)
-
-	// Удаляем элементы
-	val, _ := queue.Dequeue()
-	fmt.Println(val) // 10
-
-	val, _ = queue.Dequeue()
-	fmt.Println(val) // 20
-
-	// Проверяем пустоту
-	fmt.Println(queue.IsEmpty()) // false
-
-	val, _ = queue.Dequeue()
-	fmt.Println(val) // 30
-
-	fmt.Println(queue.IsEmpty()) // true
-}
